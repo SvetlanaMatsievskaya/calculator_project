@@ -1,27 +1,25 @@
-# import console as console
+
 from fractions import Fraction
-# import cmath
-# from calculation import Calculation as calculation
-# import data_transformation as d_t
+
 
 
 def data_formatting(data):
-    data_type, left_value, oper, right_value = data
+    data_type, value_a, operation, value_b = data
 
     if data_type == '1':
 
-        left_value = complex(left_value)
+        value_a = complex(value_a)
 
-        right_value = complex(right_value)
+        value_b = complex(value_b)
 
     elif data_type == '2':
 
-        a = left_value
-        left_value = Fraction(int(a[0: a.index(
+        a = value_a
+        value_a = Fraction(int(a[0: a.index(
             '/')]), int(a[a.index('/')+1:len(a)]))
 
-        g = right_value
+        g = value_b
         right_value = Fraction(int(g[0: g.index(
             '/')]), int(g[g.index('/')+1:len(g)]))
 
-    return (left_value, oper, right_value)
+    return (value_a, operation, value_b)
